@@ -4,12 +4,6 @@ export class AddToCart{
     cart_link = '#shopping_cart_container > a'
     cart_badge = 'span[class="shopping_cart_badge"]'
 
-    // addBackpack(){
-    //     cy.get(this.btn_add_backpack).click()        
-    // }
-    // addBikeLight(){
-    //     cy.get(this.btn_add_bike_light).click()
-    // }
     addAllProduct(){
         cy.get('.btn_inventory')
             .each($button => {
@@ -17,6 +11,7 @@ export class AddToCart{
                 cy.wrap($button).click();
     });
     }
+
     assertAddToCart(){
         cy.get(this.cart_badge).should('be.visible')
         cy.wait(1000)
